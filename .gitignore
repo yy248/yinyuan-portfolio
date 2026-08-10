@@ -2,3 +2,6 @@
 .DS_Store
 Thumbs.db
 *.log
+# 临时渲染验证图（每轮 Edge headless 截图用，避免误提交）
+_preview*.png
+_verify*.png

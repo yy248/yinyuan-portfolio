@@ -79,11 +79,25 @@
   .award{background:var(--accent);border:1px solid #fecdd3;border-radius:14px;padding:18px}
   .award b{font-size:15px;color:var(--brand)}
   .award p{font-size:13.5px;color:#9f1239;margin-top:4px}
+  .award .lvl{display:inline-block;font-size:11px;color:#fff;background:var(--brand);padding:2px 8px;border-radius:6px;margin-right:6px;vertical-align:1px}
 
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .gallery img{width:100%;height:170px;object-fit:cover;border-radius:12px;
-    border:1px solid var(--line);background:#f1f5f9}
-  .gallery figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:880px;margin:0 auto}
+  .gallery figure{margin:0}
+  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#f1f5f9}
+  .gallery figcaption{font-size:11.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.4}
+  .project-evidence{display:block;max-width:280px;margin:16px auto 0;border-radius:8px;border:1px solid var(--line);cursor:zoom-in}
+  .evidence-link{display:block}
+  .evidence-caption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+  .evidence-placeholder{
+    display:flex;align-items:center;justify-content:center;
+    width:280px;height:180px;margin:16px auto 0;
+    border:1px dashed #cbd5e1;border-radius:8px;
+    background:#f8fafc;color:#64748b;font-size:13px;text-align:center;padding:20px;
+  }
+  .gallery .evidence-placeholder{
+    width:auto;height:140px;margin:0;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
 
   .contact{background:linear-gradient(135deg,#fff1f2,#f5f3ff);border:1px solid #fecdd3;
     border-radius:16px;padding:28px;text-align:center}
@@ -122,18 +136,15 @@
 
   <section id="about">
     <h2><span class="bar"></span>关于我</h2>
-    <p class="sub">新闻学专业，三段主流媒体实习，擅长全媒体文案、短视频策划剪辑与新媒体账号运营。</p>
+    <p class="sub">新闻学专业，三段主流媒体实习 + 校园舆情/传播研究经历，擅长全媒体文案、短视频策划剪辑与新媒体账号运营。</p>
     <div class="about">
-      <p>河南开封科技传媒学院传播学院新闻学本科（2023 级），在校任班长，中共党员。
-      曾在河南日报社、顶端新闻、国际 ESG 传播研究院实习，参与文旅新闻报道、短视频制作与传播策划；
-      熟悉 Premiere / Photoshop / AI 内容生产工具，有从 0 到 1 的账号运营与省级获奖内容创作经验，
-      抖音账号运营累计 1 万+ 粉丝、全网播放超 100 万。</p>
+      <p>河南开封科技传媒学院传播学院新闻学本科（2023 级），中共党员。在校从班长做起，历任学院团总支组织部委员、部长，现任团总支副书记；曾任招生就业处助理团成员、大学生艺术团合唱团委员、大禹舆情研究院学生助理。实习覆盖主流媒体与传播研究：顶端新闻采写编辑（2025.06 至今）、河南日报社新闻评论理论中心（2025.12 至今）、国际 ESG 传播研究院内容研究。熟悉 Premiere / Photoshop / AI 内容生产工具，有从 0 到 1 的账号运营与省级获奖内容创作经验，抖音账号运营累计 1 万+ 粉丝、全网播放超 100 万。</p>
     </div>
     <div class="metrics">
       <div class="metric"><b>100万+</b><span>短视频全网播放</span></div>
       <div class="metric"><b>1万+</b><span>抖音粉丝运营</span></div>
       <div class="metric"><b>3 段</b><span>主流媒体实习</span></div>
-      <div class="metric"><b>省级</b><span>奖项作品</span></div>
+      <div class="metric"><b>国奖</b><span>国家励志奖学金</span></div>
     </div>
   </section>
 
@@ -141,19 +152,6 @@
     <h2><span class="bar"></span>代表项目</h2>
     <p class="sub">从品牌整合营销到短视频策划，覆盖内容生产全链路。</p>
     <div class="cards">
-
-      <div class="card">
-        <span class="badge">品牌策划 · 整合营销</span>
-        <h3>卫龙「辣趣无界」整合营销传播策划案</h3>
-        <p>为辣味零食头部品牌卫龙设计的完整 IMC 方案，以「辣趣中原·国潮」为主题。</p>
-        <ul>
-          <li>市场与竞品分析：休闲食品 9286 亿规模、辣味零食增速 10.98%；对标良品铺子、三只松鼠、百草味</li>
-          <li>消费者洞察：Z 世代贡献辣味零食 60%+ 销售额，社交化、健康化、国潮化成趋势</li>
-          <li>核心策略「三味一体」：辣味产品 + 趣味内容 + 文化韵味</li>
-          <li>创意落地：国潮文化节、抖音挑战赛 #卫龙辣趣无界、小红书 100 位 KOC 种草、B 站文化科普</li>
-          <li>预算 500 万分配与效果预估（曝光 2 亿+、UGC 10 万+ 条）</li>
-        </ul>
-      </div>
 
       <div class="card">
         <span class="badge">短视频策划</span>
@@ -169,8 +167,43 @@
       <div class="card">
         <span class="badge">省级三等奖</span>
         <h3>AI 文旅短片《文物说开封》</h3>
-        <p>以 AI 辅助创作的文旅宣传短片，获省级三等奖。负责选题策划、脚本与剪辑，
-           探索传统文化的新媒体表达路径。</p>
+        <p>以 AI 辅助创作的文旅宣传短片，获河南省 "AI 新时代 新质向未来" AI+影视作品推优活动三等奖（颁发单位：河南省文学艺术界联合会 / 河南省广播电视局 / 河南省科学技术协会，2025.12）。负责选题策划、脚本与剪辑，探索传统文化的新媒体表达路径。</p>
+        <a href="assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" target="_blank" rel="noopener" class="evidence-link">
+          <img src="assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" alt="河南省 AI+影视作品推优活动三等奖证书《文物说开封》" class="project-evidence">
+        </a>
+        <p class="evidence-caption">获奖证书 · 河南省 AI+影视作品推优活动（2025.12）</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">省级优秀奖</span>
+        <h3>科普短片《穿越千年学养生》获 5·12 护理科普优秀奖</h3>
+        <p>作品《穿越千年学养生》荣获河南省医学科普学会第四届 5·12 护理科普短视频征集活动"优秀奖"。结合新闻传播视角做医学科普短视频创作。</p>
+        <ul>
+          <li>赛事：第四届 5·12 护理科普短视频征集活动（河南省医学科普学会主办）</li>
+          <li>奖项：优秀奖</li>
+          <li>报送：河南开封科技传媒学院</li>
+          <li>主创：王浩宇、殷圆</li>
+        </ul>
+        <a href="assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" target="_blank" rel="noopener" class="evidence-link">
+          <img src="assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" alt="河南省医学科普学会第四届 5·12 护理科普短视频征集活动优秀奖证书《穿越千年学养生》" class="project-evidence">
+        </a>
+        <p class="evidence-caption">获奖证书 · 河南省医学科普学会 2026.06.11</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">市级 · 致信表扬</span>
+        <h3>获 中共开封市委政法委员会 表扬信</h3>
+        <p>2024 年 5 月 31 日，在大禹舆情研究院学生助理期间，作为课题组学生成员之一参与中央政法委在河南调研期间举行的"全省政法系统同训互查对抗演练活动"，在期末考试与小学期准备任务繁重的情况下，安排时间认真学习演练规则及经典案例，为市委政法委提供舆情引导评论、视频和图片参考；市委政法委于 2024.06.20 致信表扬，附件为表扬名单。</p>
+        <ul>
+          <li>事件：全省政法系统同训互查对抗演练活动（中央政法委河南调研期间，2024.05.31）</li>
+          <li>角色：大禹舆情研究院学生助理（舆情引导评论、视频和图片参考）</li>
+          <li>致信单位：中共开封市委政法委员会</li>
+          <li>致信日期：2024.06.20</li>
+        </ul>
+        <a href="assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" target="_blank" rel="noopener" class="evidence-link">
+          <img src="assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" alt="中共开封市委政法委员会致河南开封科技传媒学院表扬信（2024.06.20）" class="project-evidence">
+        </a>
+        <p class="evidence-caption">表扬信原件 · 中共开封市委政法委员会 2024.06.20</p>
       </div>
 
       <div class="card">
@@ -200,8 +233,8 @@
         <p>参与评论稿件采编，累计完成 3 篇署名评论，锻炼时政与深度内容写作能力。</p>
       </div></div>
       <div class="item"><span class="dot"></span><div>
-        <h3>顶端新闻 · 内容 / 短视频</h3>
-        <div class="meta">2025.09 至今</div>
+        <h3>顶端新闻 · 采写编辑 / 短视频</h3>
+        <div class="meta">2025.06 至今</div>
         <p>参与顶端新闻文旅报道（如宋都御街专题），完成 30+ 篇稿件、100+ 条视频剪辑，
            相关作品全网播放超百万。</p>
       </div></div>
@@ -210,6 +243,11 @@
         <div class="meta">2026.05 至今</div>
         <p>撰写 10+ 篇 ESG 主题稿件，梳理 30+ 家企业案例，负责可持续传播内容策划。</p>
       </div></div>
+      <div class="item"><span class="dot"></span><div>
+        <h3>大禹舆情研究院 · 学生助理</h3>
+        <div class="meta">2024.05 至 2025.04</div>
+        <p>参与舆情监测与内容整理，协助研究院日常研究与传播事务。2024.05.31 参加"全省政法系统同训互查对抗演练活动"，在期末与小学期任务繁重情况下配合提供舆情引导评论、视频和图片参考，获中共开封市委政法委员会致信表扬（2024.06.20）。</p>
+      </div></div>
     </div>
   </section>
 
@@ -217,10 +255,15 @@
     <h2><span class="bar"></span>荣誉奖项</h2>
     <p class="sub">校级与省级认可的学业、工作与创作成果。</p>
     <div class="awards">
-      <div class="award"><b>三好学生（2023–2024 学年）</b><p>专业课成绩第 6 名，校级荣誉</p></div>
-      <div class="award"><b>优秀学生干部（2023–2024 学年）</b><p>综合成绩班级第 1，任班长期间获评</p></div>
-      <div class="award"><b>省级三等奖 · AI 文旅短片《文物说开封》</b><p>内容创作类省级奖项</p></div>
-      <div class="award"><b>校级核心网评员（政法委表扬）</b><p>新媒体舆论引导相关表彰</p></div>
+      <div class="award"><span class="lvl">市级</span><b>中共开封市委政法委员会 表扬信</b><p>2024.05.31 全省政法系统同训互查对抗演练活动（中央政法委河南调研期间），为市委政法委提供舆情引导评论、视频和图片参考，2024.06.20 致信表扬。</p></div>
+      <div class="award"><span class="lvl">国家级</span><b>国家励志奖学金</b><p>2023–2024 学年（编号 2024171744，河南省教育厅，2024.11），学业与综合表现突出。</p></div>
+      <div class="award"><span class="lvl">省级</span><b>河南省医学科普学会 第四届 5·12 护理科普短视频征集活动 优秀奖</b><p>作品《穿越千年学养生》（主创：王浩宇、殷圆；报送：河南开封科技传媒学院；颁发：河南省医学科普学会，2026.06.11）。</p></div>
+      <div class="award"><span class="lvl">省级</span><b>河南省 AI+影视作品推优活动 三等奖</b><p>作品《文物说开封》（河南省文联 / 省广电局 / 省科协，2025.12）。</p></div>
+      <div class="award"><span class="lvl">校级</span><b>第十六届 "挑战杯" 校决赛 三等奖</b><p>《沿黄护生·黄河生态农业协同发展路径探索》项目（共青团河南开封科技传媒学院委员会，2024.06）。</p></div>
+      <div class="award"><span class="lvl">校级</span><b>三好学生（2023–2024 / 2024–2025 两学年连续）</b><p>连续两学年获评，专业成绩与综合表现突出。</p></div>
+      <div class="award"><span class="lvl">校级</span><b>优秀学生干部（2023–2024 / 2024–2025 两学年连续）</b><p>连续两学年获评，综合成绩班级第 1；任期覆盖班长、团总支组织部、副书记。</p></div>
+      <div class="award"><span class="lvl">校级</span><b>优秀共青团员（2023 年度）</b><p>共青团河南开封科技传媒学院委员会 2024.05 颁发。</p></div>
+      <div class="award"><span class="lvl">校级</span><b>优秀网络评论员 / 优秀招生助理</b><p>2024–2025 学年舆论宣传工作优秀网评员（校党委宣传部，2025.08）；2024 年招生咨询优秀招生助理（校招生办，2024.09）。</p></div>
     </div>
   </section>
 
@@ -228,12 +271,18 @@
     <h2><span class="bar"></span>证书画廊</h2>
     <p class="sub">部分获奖与资质证书（公开展示，如需下架可随时告知）。</p>
     <div class="gallery">
-      <figure><img src="assets/certs/e3de9a293e88d15990425cdabff80dd.jpg" alt="证书1"><figcaption>荣誉证书</figcaption></figure>
-      <figure><img src="assets/certs/2b372dd63519a96b5c63af9c2a7bd0d.jpg" alt="证书2"><figcaption>荣誉证书</figcaption></figure>
-      <figure><img src="assets/certs/de33f29813ccc52cb9875bf49e8f88b.jpg" alt="证书3"><figcaption>荣誉证书</figcaption></figure>
-      <figure><img src="assets/certs/45c24925b93738ef9b008d54c734f99.jpg" alt="证书4"><figcaption>荣誉证书</figcaption></figure>
-      <figure><img src="assets/certs/375bdbc1e15ee70caae2e7ed18d0242.jpg" alt="证书5"><figcaption>荣誉证书</figcaption></figure>
-      <figure><img src="assets/certs/176b10fa1d66721b8e7eeb8a1ec7f48.jpg" alt="证书6"><figcaption>荣誉证书</figcaption></figure>
+      <figure><img src="assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" alt="中共开封市委政法委员会表扬信"><figcaption>市级 · 中共开封市委政法委员会致信表扬（2024.06.20，全省政法系统同训互查对抗演练）</figcaption></figure>
+      <figure><img src="assets/certs/guojia_lizhi_jiangxuejin_2023-2024.jpg" alt="国家励志奖学金证书"><figcaption>国家级 · 国家励志奖学金（2023–2024 学年，河南省教育厅）</figcaption></figure>
+      <figure><img src="assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" alt="河南省 AI+影视作品推优活动三等奖证书"><figcaption>省级 · AI+影视《文物说开封》三等奖（2025.12）</figcaption></figure>
+      <figure><img src="assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" alt="河南省医学科普学会第四届 5·12 护理科普短视频征集活动优秀奖证书"><figcaption>省级 · 5·12 护理科普短视频《穿越千年学养生》优秀奖（2026.06.11，河南省医学科普学会）</figcaption></figure>
+      <figure><img src="assets/certs/tiaozhanbei_xiaojuesai_2024_yanhuanghusheng.jpg" alt="第十六届挑战杯校决赛三等奖证书"><figcaption>校级 · 第十六届"挑战杯"校决赛三等奖（沿黄护生，2024.06）</figcaption></figure>
+      <figure><img src="assets/certs/sanhao_xuesheng_2023-2024.jpg" alt="三好学生证书 2023-2024 学年"><figcaption>校级 · 三好学生（2023–2024 学年）</figcaption></figure>
+      <figure><img src="assets/certs/sanhao_xuesheng_2024-2025.jpg" alt="三好学生证书 2024-2025 学年"><figcaption>校级 · 三好学生（2024–2025 学年）</figcaption></figure>
+      <figure><img src="assets/certs/youxiu_xuesheng_ganbu_2023-2024.jpg" alt="优秀学生干部证书 2023-2024 学年"><figcaption>校级 · 优秀学生干部（2023–2024 学年）</figcaption></figure>
+      <figure><img src="assets/certs/youxiu_xuesheng_ganbu_2024-2025.jpg" alt="优秀学生干部证书 2024-2025 学年"><figcaption>校级 · 优秀学生干部（2024–2025 学年）</figcaption></figure>
+      <figure><img src="assets/certs/youxiu_gongqingtuanyuan_2023.jpg" alt="优秀共青团员证书"><figcaption>校级 · 优秀共青团员（2023 年度）</figcaption></figure>
+      <figure><img src="assets/certs/youxiu_wangluo_pinglunyuan_2024-2025.jpg" alt="优秀网络评论员证书"><figcaption>校级 · 优秀网络评论员（2024–2025 学年，党委宣传部，2025.08）</figcaption></figure>
+      <figure><img src="assets/certs/youxiu_zhaosheng_zhuli_2024.jpg" alt="优秀招生助理证书"><figcaption>校级 · 优秀招生助理（2024 年招生咨询，校招生办）</figcaption></figure>
     </div>
   </section>
 
