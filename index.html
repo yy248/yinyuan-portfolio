@@ -7,69 +7,128 @@
 <style>
   :root{
     --bg:#ffffff; --fg:#1f2328; --muted:#6b7280; --line:#e5e7eb;
-    --brand:#e11d48; --brand2:#7c3aed; --card:#f8fafc; --accent:#fff1f2;
+    --brand:#e11d48; --brand2:#7c3aed; --card:#f8fafc; --accent:#fff1f2; --ink-soft:#374151;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     font-family:"Noto Serif CJK SC","Source Han Serif SC","LXGW WenKai",
       "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-    color:var(--fg); background:var(--bg); line-height:1.7;
+    color:var(--fg); background:var(--bg); line-height:1.75;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 72px}
-  header.hero{
-    text-align:center;padding:40px 0 32px;border-bottom:1px solid var(--line);
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,#e11d48 0%,#7c3aed 100%);
+    color:#fff;padding:72px 24px 64px;text-align:center;
   }
-  .hero h1{font-size:38px;letter-spacing:2px}
-  .hero .role{margin-top:10px;font-size:17px;color:var(--muted)}
-  .hero .tags{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .tag{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--card)}
+  .hero-inner{max-width:940px;margin:0 auto;padding:0 24px}
+  .avatar{
+    width:108px;height:108px;border-radius:50%;margin:0 auto 18px;
+    background:rgba(255,255,255,.18);border:3px solid rgba(255,255,255,.55);
+    display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;
+    backdrop-filter:blur(4px);
+  }
+  .hero h1{font-size:44px;letter-spacing:3px}
+  .hero .role{margin-top:10px;font-size:18px;opacity:.95}
+  .hero .tags{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .tag{font-size:13px;padding:5px 14px;border:1px solid rgba(255,255,255,.5);
+    border-radius:999px;background:rgba(255,255,255,.12)}
   .btn{
-    display:inline-block;margin-top:22px;padding:12px 26px;border-radius:10px;
-    background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;
-    text-decoration:none;font-size:15px;font-weight:600;box-shadow:0 6px 18px rgba(225,29,72,.25)
+    display:inline-block;margin-top:26px;padding:13px 30px;border-radius:12px;
+    background:#fff;color:var(--brand);text-decoration:none;font-size:15px;font-weight:700;
+    box-shadow:0 10px 30px rgba(0,0,0,.18)
   }
-  .btn:hover{opacity:.92}
-  section{margin-top:40px}
-  h2{font-size:22px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--brand)}
-  .about p{color:#374151;font-size:15.5px}
-  .metrics{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
-  .metric{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);
-    border-radius:12px;padding:16px;text-align:center}
-  .metric b{display:block;font-size:24px;color:var(--brand)}
+  .btn:hover{transform:translateY(-2px);transition:.2s}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:24px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  h2 .bar{width:6px;height:24px;border-radius:3px;background:linear-gradient(var(--brand),var(--brand2))}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+
+  .about p{color:var(--ink-soft);font-size:16px}
+
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .metric b{display:block;font-size:26px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .metric span{font-size:13px;color:var(--muted)}
-  .cards{display:grid;grid-template-columns:1fr;gap:16px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .card h3{font-size:17px;margin-bottom:6px}
+
+  .cards{display:grid;grid-template-columns:1fr;gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
+    transition:.2s}
+  .card:hover{box-shadow:0 12px 30px rgba(225,29,72,.10);transform:translateY(-3px)}
   .card .badge{display:inline-block;font-size:12px;color:var(--brand2);
-    border:1px solid var(--brand2);border-radius:6px;padding:2px 8px;margin-bottom:8px}
+    border:1px solid var(--brand2);border-radius:8px;padding:3px 10px;margin-bottom:10px}
+  .card h3{font-size:19px;margin-bottom:8px}
   .card p{font-size:14.5px;color:#4b5563}
-  .contact{background:var(--accent);border:1px solid #fecdd3;border-radius:14px;padding:22px;text-align:center}
-  .contact a{color:var(--brand);font-weight:600;text-decoration:none}
-  footer{margin-top:48px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+  .card ul{margin:10px 0 0 18px;font-size:14px;color:#4b5563}
+  .card ul li{margin:4px 0}
+
+  .exp{display:grid;gap:16px}
+  .exp .item{display:flex;gap:16px;align-items:flex-start}
+  .exp .dot{width:12px;height:12px;border-radius:50%;margin-top:7px;
+    background:linear-gradient(var(--brand),var(--brand2));flex:none}
+  .exp h3{font-size:16px}
+  .exp .meta{font-size:13px;color:var(--muted);margin:2px 0 6px}
+  .exp p{font-size:14.5px;color:#4b5563}
+
+  .awards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .award{background:var(--accent);border:1px solid #fecdd3;border-radius:14px;padding:18px}
+  .award b{font-size:15px;color:var(--brand)}
+  .award p{font-size:13.5px;color:#9f1239;margin-top:4px}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .gallery img{width:100%;height:170px;object-fit:cover;border-radius:12px;
+    border:1px solid var(--line);background:#f1f5f9}
+  .gallery figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+
+  .contact{background:linear-gradient(135deg,#fff1f2,#f5f3ff);border:1px solid #fecdd3;
+    border-radius:16px;padding:28px;text-align:center}
+  .contact a{color:var(--brand);font-weight:700;text-decoration:none;font-size:17px}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
   .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+  @media(max-width:680px){
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .awards{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .hero h1{font-size:34px}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="hero">
+<header class="hero">
+  <div class="hero-inner">
+    <div class="avatar">殷</div>
     <h1>殷 圆</h1>
     <div class="role">新媒体 / 内容运营 · 2027 届毕业生</div>
     <div class="tags">
       <span class="tag">新闻学 · 本科</span>
       <span class="tag">河南开封科技传媒学院</span>
       <span class="tag">中共党员</span>
+      <span class="tag">班长</span>
       <span class="tag">城市不限 · 可远程</span>
     </div>
     <a class="btn" href="https://pan.quark.cn/s/4df5745eacb6" target="_blank" rel="noopener">查看完整作品集 →</a>
-  </header>
+  </div>
+</header>
 
-  <section class="about">
-    <h2>关于我</h2>
-    <p>新闻学专业，三段主流媒体实习经历（河南日报社评论、顶端新闻短视频、国际 ESG 传播研究院），
-       擅长全媒体文案、短视频策划剪辑与新媒体账号运营。熟悉 Premiere / Photoshop / AI 内容生产工具，
-       有从 0 到 1 的账号运营与省级获奖内容创作经验。</p>
+<div class="wrap">
+
+  <section id="about">
+    <h2><span class="bar"></span>关于我</h2>
+    <p class="sub">新闻学专业，三段主流媒体实习，擅长全媒体文案、短视频策划剪辑与新媒体账号运营。</p>
+    <div class="about">
+      <p>河南开封科技传媒学院传播学院新闻学本科（2023 级），在校任班长，中共党员。
+      曾在河南日报社、顶端新闻、国际 ESG 传播研究院实习，参与文旅新闻报道、短视频制作与传播策划；
+      熟悉 Premiere / Photoshop / AI 内容生产工具，有从 0 到 1 的账号运营与省级获奖内容创作经验，
+      抖音账号运营累计 1 万+ 粉丝、全网播放超 100 万。</p>
+    </div>
     <div class="metrics">
       <div class="metric"><b>100万+</b><span>短视频全网播放</span></div>
       <div class="metric"><b>1万+</b><span>抖音粉丝运营</span></div>
@@ -78,42 +137,119 @@
     </div>
   </section>
 
-  <section>
-    <h2>代表项目</h2>
+  <section id="projects">
+    <h2><span class="bar"></span>代表项目</h2>
+    <p class="sub">从品牌整合营销到短视频策划，覆盖内容生产全链路。</p>
     <div class="cards">
+
+      <div class="card">
+        <span class="badge">品牌策划 · 整合营销</span>
+        <h3>卫龙「辣趣无界」整合营销传播策划案</h3>
+        <p>为辣味零食头部品牌卫龙设计的完整 IMC 方案，以「辣趣中原·国潮」为主题。</p>
+        <ul>
+          <li>市场与竞品分析：休闲食品 9286 亿规模、辣味零食增速 10.98%；对标良品铺子、三只松鼠、百草味</li>
+          <li>消费者洞察：Z 世代贡献辣味零食 60%+ 销售额，社交化、健康化、国潮化成趋势</li>
+          <li>核心策略「三味一体」：辣味产品 + 趣味内容 + 文化韵味</li>
+          <li>创意落地：国潮文化节、抖音挑战赛 #卫龙辣趣无界、小红书 100 位 KOC 种草、B 站文化科普</li>
+          <li>预算 500 万分配与效果预估（曝光 2 亿+、UGC 10 万+ 条）</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="badge">短视频策划</span>
+        <h3>宋都御街新闻短视频策划案</h3>
+        <p>围绕开封宋都御街文旅遇冷现象制作的 news 短视频分镜脚本，共 6 段、约 2 分 30 秒。</p>
+        <ul>
+          <li>结构：反差引入 → 背景 → 现状困境 → 封路根源 → 一城两重天 → 期盼追问</li>
+          <li>含分镜景别、时长、画外音与字幕，可直接用于实景拍摄</li>
+          <li>对应顶端新闻文旅报道《文旅开封｜从高速公路驶入「东京梦华」》</li>
+        </ul>
+      </div>
+
       <div class="card">
         <span class="badge">省级三等奖</span>
         <h3>AI 文旅短片《文物说开封》</h3>
         <p>以 AI 辅助创作的文旅宣传短片，获省级三等奖。负责选题策划、脚本与剪辑，
            探索传统文化的新媒体表达路径。</p>
       </div>
+
       <div class="card">
         <span class="badge">账号运营</span>
         <h3>学院官方抖音账号</h3>
         <p>从 0 搭建并运营学院官方抖音账号，积累 1 万+ 粉丝，负责内容选题、
            拍摄剪辑与日常更新，多篇内容进入校园传播热点。</p>
       </div>
+
       <div class="card">
         <span class="badge">结项优秀</span>
         <h3>河南省高校防艾基金项目</h3>
         <p>参与省级高校防艾基金项目，负责宣传内容策划与传播，项目结项获评优秀，
            内容覆盖 1000+ 名在校师生。</p>
       </div>
+
     </div>
   </section>
 
-  <section>
-    <h2>联系方式</h2>
+  <section id="exp">
+    <h2><span class="bar"></span>实习经历</h2>
+    <p class="sub">主流媒体与传播研究机构的内容生产实战。</p>
+    <div class="exp">
+      <div class="item"><span class="dot"></span><div>
+        <h3>河南日报社 · 评论实习</h3>
+        <div class="meta">2025.12 至今</div>
+        <p>参与评论稿件采编，累计完成 3 篇署名评论，锻炼时政与深度内容写作能力。</p>
+      </div></div>
+      <div class="item"><span class="dot"></span><div>
+        <h3>顶端新闻 · 内容 / 短视频</h3>
+        <div class="meta">2025.09 至今</div>
+        <p>参与顶端新闻文旅报道（如宋都御街专题），完成 30+ 篇稿件、100+ 条视频剪辑，
+           相关作品全网播放超百万。</p>
+      </div></div>
+      <div class="item"><span class="dot"></span><div>
+        <h3>国际 ESG 传播研究院 · 内容研究</h3>
+        <div class="meta">2026.05 至今</div>
+        <p>撰写 10+ 篇 ESG 主题稿件，梳理 30+ 家企业案例，负责可持续传播内容策划。</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2><span class="bar"></span>荣誉奖项</h2>
+    <p class="sub">校级与省级认可的学业、工作与创作成果。</p>
+    <div class="awards">
+      <div class="award"><b>三好学生（2023–2024 学年）</b><p>专业课成绩第 6 名，校级荣誉</p></div>
+      <div class="award"><b>优秀学生干部（2023–2024 学年）</b><p>综合成绩班级第 1，任班长期间获评</p></div>
+      <div class="award"><b>省级三等奖 · AI 文旅短片《文物说开封》</b><p>内容创作类省级奖项</p></div>
+      <div class="award"><b>校级核心网评员（政法委表扬）</b><p>新媒体舆论引导相关表彰</p></div>
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2><span class="bar"></span>证书画廊</h2>
+    <p class="sub">部分获奖与资质证书（公开展示，如需下架可随时告知）。</p>
+    <div class="gallery">
+      <figure><img src="assets/certs/e3de9a293e88d15990425cdabff80dd.jpg" alt="证书1"><figcaption>荣誉证书</figcaption></figure>
+      <figure><img src="assets/certs/2b372dd63519a96b5c63af9c2a7bd0d.jpg" alt="证书2"><figcaption>荣誉证书</figcaption></figure>
+      <figure><img src="assets/certs/de33f29813ccc52cb9875bf49e8f88b.jpg" alt="证书3"><figcaption>荣誉证书</figcaption></figure>
+      <figure><img src="assets/certs/45c24925b93738ef9b008d54c734f99.jpg" alt="证书4"><figcaption>荣誉证书</figcaption></figure>
+      <figure><img src="assets/certs/375bdbc1e15ee70caae2e7ed18d0242.jpg" alt="证书5"><figcaption>荣誉证书</figcaption></figure>
+      <figure><img src="assets/certs/176b10fa1d66721b8e7eeb8a1ec7f48.jpg" alt="证书6"><figcaption>荣誉证书</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="bar"></span>联系方式</h2>
     <div class="contact">
       <p>邮箱：<a href="mailto:2714067199@qq.com">2714067199@qq.com</a></p>
       <p class="note">完整简历与更多作品请见上方「作品集」网盘链接。</p>
     </div>
   </section>
 
-  <footer>
-    殷圆 · 新媒体/内容运营作品集 · 本页由 WorkBuddy 生成，托管于 GitHub Pages
-  </footer>
-
 </div>
+
+<footer>
+  殷圆 · 新媒体/内容运营作品集 · 本页由 WorkBuddy 生成，托管于 GitHub Pages
+</footer>
+
 </body>
 </html>
