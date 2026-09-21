@@ -4,33 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>殷圆 · 新媒体/内容运营作品集</title>
+<meta name="description" content="殷圆 · 新闻学 2027 届毕业生作品集：主流媒体发表作品、短视频策划、新媒体账号运营与省级获奖内容创作。">
+<meta property="og:title" content="殷圆 · 新媒体/内容运营作品集">
+<meta property="og:description" content="新闻学 2027 届 · 主流媒体发表作品 / 短视频策划 / 新媒体运营">
+<meta property="og:type" content="website">
 <style>
   :root{
-    --bg:#ffffff; --fg:#1f2328; --muted:#6b7280; --line:#e5e7eb;
-    --brand:#e11d48; --brand2:#7c3aed; --card:#f8fafc; --accent:#fff1f2; --ink-soft:#374151;
+    --bg:#ffffff; --fg:#1f2328; --muted:#6b7280; --line:#e3edf5;
+    --brand:#3E8ECE; --brand2:#8FC4E8; --card:#F2F8FD; --accent:#eef6fd; --ink-soft:#374151;
+    --nav-h:60px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  :root{--serif:"Noto Serif CJK SC","Source Han Serif SC","LXGW WenKai",serif}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 20px)}
   body{
-    font-family:"Noto Serif CJK SC","Source Han Serif SC","LXGW WenKai",
-      "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
     color:var(--fg); background:var(--bg); line-height:1.75;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,.logo,.metric b,.award b,.card h3,.work h3,.hero h1,.hero .role,.tag{
+    font-family:var(--serif)}
   a{color:inherit}
+
+  /* 顶部导航 */
+  .nav{
+    position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;
+    background:rgba(255,255,255,.82);backdrop-filter:blur(14px) saturate(180%);
+    -webkit-backdrop-filter:blur(14px) saturate(180%);
+    border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 20px;
+  }
+  .nav .logo{font-weight:800;font-size:16px;letter-spacing:1px;white-space:nowrap;
+    background:linear-gradient(135deg,var(--brand),var(--brand2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .nav .links{display:flex;gap:2px;align-items:center}
+  .nav .links a{
+    text-decoration:none;font-size:14px;color:var(--muted);
+    padding:7px 11px;border-radius:999px;transition:.2s;white-space:nowrap;
+  }
+  .nav .links a:hover{color:var(--fg);background:var(--card)}
+  .nav .links a.active{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+  .nav .links a.cta{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand2));font-weight:700}
+  .nav .links a.cta:hover{opacity:.92}
+  .nav .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .nav .burger span{width:22px;height:2px;background:var(--fg);border-radius:2px;transition:.25s}
+  .nav .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav .burger.open span:nth-child(2){opacity:0}
+  .nav .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
   /* HERO */
   .hero{
-    background:linear-gradient(135deg,#e11d48 0%,#7c3aed 100%);
-    color:#fff;padding:72px 24px 64px;text-align:center;
+    background:linear-gradient(135deg,#3E8ECE 0%,#8FC4E8 100%);
+    color:#fff;padding:calc(72px + var(--nav-h)) 24px 64px;text-align:center;position:relative;overflow:hidden;
   }
-  .hero-inner{max-width:940px;margin:0 auto;padding:0 24px}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.18),transparent 40%),
+              radial-gradient(circle at 80% 70%,rgba(255,255,255,.12),transparent 45%);pointer-events:none}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
   .avatar{
-    width:108px;height:108px;border-radius:50%;margin:0 auto 18px;
+    width:108px;height:108px;border-radius:50%;margin:0 auto 18px;overflow:hidden;
     background:rgba(255,255,255,.18);border:3px solid rgba(255,255,255,.55);
     display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;
     backdrop-filter:blur(4px);
   }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
   .hero h1{font-size:44px;letter-spacing:3px}
   .hero .role{margin-top:10px;font-size:18px;opacity:.95}
   .hero .tags{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
@@ -39,9 +77,11 @@
   .btn{
     display:inline-block;margin-top:26px;padding:13px 30px;border-radius:12px;
     background:#fff;color:var(--brand);text-decoration:none;font-size:15px;font-weight:700;
-    box-shadow:0 10px 30px rgba(0,0,0,.18)
+    box-shadow:0 10px 30px rgba(0,0,0,.18);transition:.2s;
   }
-  .btn:hover{transform:translateY(-2px);transition:.2s}
+  .btn:hover{transform:translateY(-2px)}
+
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 
   section{padding:52px 0;border-bottom:1px solid var(--line)}
   h2{font-size:24px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
@@ -51,21 +91,33 @@
   .about p{color:var(--ink-soft);font-size:16px}
 
   .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
-  .metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;transition:.2s}
+  .metric:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(62,142,206,.10)}
   .metric b{display:block;font-size:26px;background:linear-gradient(135deg,var(--brand),var(--brand2));
     -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .metric span{font-size:13px;color:var(--muted)}
 
   .cards{display:grid;grid-template-columns:1fr;gap:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
-    transition:.2s}
-  .card:hover{box-shadow:0 12px 30px rgba(225,29,72,.10);transform:translateY(-3px)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.2s}
+  .card:hover{box-shadow:0 12px 30px rgba(62,142,206,.10);transform:translateY(-3px)}
   .card .badge{display:inline-block;font-size:12px;color:var(--brand2);
     border:1px solid var(--brand2);border-radius:8px;padding:3px 10px;margin-bottom:10px}
   .card h3{font-size:19px;margin-bottom:8px}
   .card p{font-size:14.5px;color:#4b5563}
   .card ul{margin:10px 0 0 18px;font-size:14px;color:#4b5563}
   .card ul li{margin:4px 0}
+
+  /* 已发表作品 */
+  .works{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .work{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;
+    display:flex;flex-direction:column;gap:8px;transition:.2s}
+  .work:hover{box-shadow:0 12px 30px rgba(62,142,206,.12);transform:translateY(-3px);border-color:#cfe0f0}
+  .work .src{font-size:12px;color:var(--brand2);border:1px solid #cfe0f0;background:#eef6fd;
+    border-radius:8px;padding:2px 9px;align-self:flex-start}
+  .work h3{font-size:17px;line-height:1.5}
+  .work .meta{font-size:12.5px;color:var(--muted)}
+  .work .go{margin-top:auto;font-size:13.5px;font-weight:700;color:var(--brand);text-decoration:none}
+  .work .go:hover{text-decoration:underline}
 
   .exp{display:grid;gap:16px}
   .exp .item{display:flex;gap:16px;align-items:flex-start}
@@ -75,38 +127,76 @@
   .exp .meta{font-size:13px;color:var(--muted);margin:2px 0 6px}
   .exp p{font-size:14.5px;color:#4b5563}
 
+  .grp{font-size:14px;font-weight:700;color:var(--brand);margin:22px 0 12px;display:flex;align-items:center;gap:8px}
+  .grp:first-of-type{margin-top:0}
+  .grp::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#cfe4f5,transparent)}
+
   .awards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .award{background:var(--accent);border:1px solid #fecdd3;border-radius:14px;padding:18px}
+  .award{background:var(--accent);border:1px solid #cfe4f5;border-radius:14px;padding:18px}
   .award b{font-size:15px;color:var(--brand)}
-  .award p{font-size:13.5px;color:#9f1239;margin-top:4px}
+  .award p{font-size:13.5px;color:#1f5d86;margin-top:4px}
   .award .lvl{display:inline-block;font-size:11px;color:#fff;background:var(--brand);padding:2px 8px;border-radius:6px;margin-right:6px;vertical-align:1px}
+  .award.g2{background:#eef6fd;border-color:#cfe0f0}
+  .award.g2 b{color:var(--brand2)}
+  .award.g2 p{color:#2a5d86}
+  .award.g2 .lvl{background:var(--brand2)}
 
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:880px;margin:0 auto}
-  .gallery figure{margin:0}
-  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#f1f5f9}
-  .gallery figcaption{font-size:11.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.4}
-  .project-evidence{display:block;max-width:280px;margin:16px auto 0;border-radius:8px;border:1px solid var(--line);cursor:zoom-in}
-  .evidence-link{display:block}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .gallery figure{margin:0;cursor:zoom-in}
+  .gallery img{width:100%;height:150px;object-fit:contain;border-radius:10px;border:1px solid var(--line);background:#eef6fd;transition:.2s;display:block}
+  .gallery figure:hover img{transform:scale(1.03);box-shadow:0 8px 22px rgba(0,0,0,.12)}
+  .gallery figcaption{font-size:11.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.45}
+  .paper-strip{grid-template-columns:repeat(4,1fr);max-width:880px;margin:0 auto}
+  .paper-strip img{height:200px;object-fit:contain}
+
+  .project-evidence{display:block;max-width:280px;margin:16px auto 0;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;transition:.2s}
+  .project-evidence:hover{transform:scale(1.02)}
   .evidence-caption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
-  .evidence-placeholder{
-    display:flex;align-items:center;justify-content:center;
-    width:280px;height:180px;margin:16px auto 0;
-    border:1px dashed #cbd5e1;border-radius:8px;
-    background:#f8fafc;color:#64748b;font-size:13px;text-align:center;padding:20px;
-  }
-  .gallery .evidence-placeholder{
-    width:auto;height:140px;margin:0;border-radius:10px;
-    display:flex;align-items:center;justify-content:center;
-  }
 
-  .contact{background:linear-gradient(135deg,#fff1f2,#f5f3ff);border:1px solid #fecdd3;
+  .contact{background:linear-gradient(135deg,#eef6fd,#eef6fd);border:1px solid #cfe4f5;
     border-radius:16px;padding:28px;text-align:center}
   .contact a{color:var(--brand);font-weight:700;text-decoration:none;font-size:17px}
+  .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+  .wx{cursor:pointer;font-weight:700;color:var(--brand);border-bottom:1px dashed var(--brand)}
+  .wx:hover{opacity:.82}
+  .wx-hint{font-size:12px;color:var(--muted)}
+  .douyin-link{display:inline-block;margin-top:12px;color:var(--brand);font-weight:700;text-decoration:none}
+  .douyin-link:hover{text-decoration:underline}
+  .toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(20px);
+    background:rgba(31,35,40,.92);color:#fff;font-size:13.5px;padding:10px 18px;border-radius:999px;
+    z-index:300;opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s ease;
+    box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
   footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
-  .note{font-size:12.5px;color:var(--muted);margin-top:10px}
 
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.show{opacity:1;transform:none}
+
+  .to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:none;cursor:pointer;
+    font-size:20px;display:none;align-items:center;justify-content:center;z-index:90;
+    box-shadow:0 8px 24px rgba(62,142,206,.35);transition:.2s}
+  .to-top.show{display:flex}
+  .to-top:hover{transform:translateY(-3px)}
+
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(15,15,23,.92);
+    display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+  .lightbox.open{display:flex;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .lightbox img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lightbox .cap{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#e3edf5;font-size:13px;padding:0 24px}
+
+  @media(max-width:860px){
+    .works{grid-template-columns:1fr}
+  }
   @media(max-width:680px){
+    .nav .links{position:fixed;top:var(--nav-h);left:0;right:0;flex-direction:column;align-items:stretch;
+      background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;gap:4px;
+      transform:translateY(-130%);transition:transform .28s ease;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+    .nav .links.open{transform:translateY(0)}
+    .nav .links a{padding:11px 14px}
+    .nav .burger{display:flex}
     .metrics{grid-template-columns:repeat(2,1fr)}
     .awards{grid-template-columns:1fr}
     .gallery{grid-template-columns:repeat(2,1fr)}
@@ -116,62 +206,77 @@
 </head>
 <body>
 
+<nav class="nav" id="nav">
+  <div class="logo">殷圆 · 作品集</div>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  <div class="links" id="navLinks">
+    <a href="#about">关于我</a>
+    <a href="#projects">代表项目</a>
+    <a href="#works">发表作品</a>
+    <a href="#exp">实习经历</a>
+    <a href="#awards">荣誉奖项</a>
+    <a href="#certs">证书画廊</a>
+    <a href="#contact">联系</a>
+    <a href="https://pan.quark.cn/s/4df5745eacb6" target="_blank" rel="noopener" class="cta">作品集网盘</a>
+  </div>
+</nav>
+
 <header class="hero">
   <div class="hero-inner">
-    <div class="avatar">殷</div>
+    <div class="avatar"><img src="assets/certs/profile.jpg" alt="殷圆" onerror="this.outerHTML='殷'"></div>
     <h1>殷 圆</h1>
     <div class="role">新媒体 / 内容运营 · 2027 届毕业生</div>
     <div class="tags">
       <span class="tag">新闻学 · 本科</span>
       <span class="tag">河南开封科技传媒学院</span>
       <span class="tag">中共党员</span>
-      <span class="tag">班长</span>
+      <span class="tag">省级优秀学生干部</span>
       <span class="tag">城市不限 · 可远程</span>
     </div>
-    <a class="btn" href="https://pan.quark.cn/s/4df5745eacb6" target="_blank" rel="noopener">查看完整作品集 →</a>
+    <a class="btn" href="#works">查看发表作品 →</a>
   </div>
 </header>
 
 <div class="wrap">
 
-  <section id="about">
+  <section id="about" class="reveal">
     <h2><span class="bar"></span>关于我</h2>
     <p class="sub">新闻学专业，三段主流媒体实习 + 校园舆情/传播研究经历，擅长全媒体文案、短视频策划剪辑与新媒体账号运营。</p>
     <div class="about">
-      <p>河南开封科技传媒学院传播学院新闻学本科（2023 级），中共党员。在校从班长做起，历任学院团总支组织部委员、部长，现任团总支副书记；曾任招生就业处助理团成员、大学生艺术团合唱团委员、大禹舆情研究院学生助理。实习覆盖主流媒体与传播研究：顶端新闻采写编辑（2025.06 至今）、河南日报社新闻评论理论中心（2025.12 至今）、国际 ESG 传播研究院内容研究。熟悉 Premiere / Photoshop / AI 内容生产工具，有从 0 到 1 的账号运营与省级获奖内容创作经验，抖音账号运营累计 1 万+ 粉丝、全网播放超 100 万。</p>
+      <p>河南开封科技传媒学院传播学院新闻学本科（2023 级，大四），中共党员，2026 年河南省普通高等学校"优秀学生干部"。在校从班长做起，历任学院团总支组织部委员、部长，曾任团总支副书记；曾任招生就业处助理团成员、大学生艺术团合唱团委员、大禹舆情研究院学生助理。实习覆盖主流媒体与传播研究：顶端新闻（2025.09–2026.06）、河南日报社新闻评论理论中心（2025.12–2026.09）、国际 ESG 传播研究院内容研究（2026.05 至今）。已在河南日报客户端"豫论场"发表署名评论 2 篇，并在河南日报实习期间参与"了不起的三苏文化"系列短视频创作（发布于顶端新闻视频号）。熟悉 Premiere / Photoshop / AI 内容生产工具，有账号运营与省级获奖内容创作经验；参与运营的抖音账号累计粉丝 3.9 万+，全网播放超 100 万。</p>
     </div>
-    <div class="metrics">
-      <div class="metric"><b>100万+</b><span>短视频全网播放</span></div>
-      <div class="metric"><b>1万+</b><span>抖音粉丝运营</span></div>
-      <div class="metric"><b>3 段</b><span>主流媒体实习</span></div>
-      <div class="metric"><b>国奖</b><span>国家励志奖学金</span></div>
+    <div class="metrics" id="metrics">
+      <div class="metric"><b data-to="100" data-suffix="万+">0</b><span>短视频全网播放</span></div>
+      <div class="metric"><b data-to="3.9" data-decimals="1" data-suffix="万+">0</b><span>抖音粉丝运营</span></div>
+      <div class="metric"><b data-to="3" data-suffix=" 段">0</b><span>主流媒体实习</span></div>
+      <div class="metric"><b data-to="5" data-suffix=" 篇">0</b><span>公开发表作品</span></div>
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="reveal">
     <h2><span class="bar"></span>代表项目</h2>
-    <p class="sub">从品牌整合营销到短视频策划，覆盖内容生产全链路。</p>
+    <p class="sub">短视频策划、AI 内容创作与账号运营，覆盖内容生产全链路。</p>
     <div class="cards">
-
-      <div class="card">
-        <span class="badge">短视频策划</span>
-        <h3>宋都御街新闻短视频策划案</h3>
-        <p>围绕开封宋都御街文旅遇冷现象制作的 news 短视频分镜脚本，共 6 段、约 2 分 30 秒。</p>
-        <ul>
-          <li>结构：反差引入 → 背景 → 现状困境 → 封路根源 → 一城两重天 → 期盼追问</li>
-          <li>含分镜景别、时长、画外音与字幕，可直接用于实景拍摄</li>
-          <li>对应顶端新闻文旅报道《文旅开封｜从高速公路驶入「东京梦华」》</li>
-        </ul>
-      </div>
 
       <div class="card">
         <span class="badge">省级三等奖</span>
         <h3>AI 文旅短片《文物说开封》</h3>
         <p>以 AI 辅助创作的文旅宣传短片，获河南省 "AI 新时代 新质向未来" AI+影视作品推优活动三等奖（颁发单位：河南省文学艺术界联合会 / 河南省广播电视局 / 河南省科学技术协会，2025.12）。负责选题策划、脚本与剪辑，探索传统文化的新媒体表达路径。</p>
-        <a href="assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" target="_blank" rel="noopener" class="evidence-link">
-          <img src="assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" alt="河南省 AI+影视作品推优活动三等奖证书《文物说开封》" class="project-evidence">
+        <a href="https://yy248.github.io/yinyuan-portfolio/assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" target="_blank" rel="noopener">
+          <img src="https://yy248.github.io/yinyuan-portfolio/assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" alt="河南省 AI+影视作品推优活动三等奖证书《文物说开封》" class="project-evidence" data-cap="获奖证书 · 河南省 AI+影视作品推优活动（2025.12）">
         </a>
         <p class="evidence-caption">获奖证书 · 河南省 AI+影视作品推优活动（2025.12）</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">国家级赛事 · 6 项获奖</span>
+        <h3>中国大学生广告艺术节学院奖（2026 春季赛）</h3>
+        <p>围绕健力宝、榄菊等命题创作短视频/直播内容，获学院奖 2026 春季征集大赛多项荣誉：健力宝抖音人气传播赛第十八名、健力宝赛道优秀类，榄菊大学生直播赛优秀类，另有《健力宝次元法则》《橙沸热爱》《畅饮一口，重启高能》三件入围。</p>
+        <ul>
+          <li>《劲儿上来了！》— 健力宝抖音人气传播赛 第十八名 + 优秀类（主创：王浩宇、殷圆）</li>
+          <li>榄菊大学生直播赛 优秀类（主创：王浩宇、郑隽辉、张百源、殷圆、熊晶晶、潘星伊）</li>
+          <li>入围类 3 件：《健力宝次元法则》《橙沸热爱：一罐健力宝的足球岁月》《畅饮一口，重启高能》</li>
+        </ul>
       </div>
 
       <div class="card">
@@ -184,8 +289,8 @@
           <li>报送：河南开封科技传媒学院</li>
           <li>主创：王浩宇、殷圆</li>
         </ul>
-        <a href="assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" target="_blank" rel="noopener" class="evidence-link">
-          <img src="assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" alt="河南省医学科普学会第四届 5·12 护理科普短视频征集活动优秀奖证书《穿越千年学养生》" class="project-evidence">
+        <a href="https://yy248.github.io/yinyuan-portfolio/assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" target="_blank" rel="noopener">
+          <img src="https://yy248.github.io/yinyuan-portfolio/assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" alt="河南省医学科普学会第四届 5·12 护理科普短视频征集活动优秀奖证书《穿越千年学养生》" class="project-evidence" data-cap="获奖证书 · 河南省医学科普学会 2026.06.11">
         </a>
         <p class="evidence-caption">获奖证书 · 河南省医学科普学会 2026.06.11</p>
       </div>
@@ -200,43 +305,103 @@
           <li>致信单位：中共开封市委政法委员会</li>
           <li>致信日期：2024.06.20</li>
         </ul>
-        <a href="assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" target="_blank" rel="noopener" class="evidence-link">
-          <img src="assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" alt="中共开封市委政法委员会致河南开封科技传媒学院表扬信（2024.06.20）" class="project-evidence">
+        <a href="https://yy248.github.io/yinyuan-portfolio/assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" target="_blank" rel="noopener">
+          <img src="https://yy248.github.io/yinyuan-portfolio/assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" alt="中共开封市委政法委员会致河南开封科技传媒学院表扬信（2024.06.20）" class="project-evidence" data-cap="表扬信原件 · 中共开封市委政法委员会 2024.06.20">
         </a>
         <p class="evidence-caption">表扬信原件 · 中共开封市委政法委员会 2024.06.20</p>
       </div>
 
       <div class="card">
         <span class="badge">账号运营</span>
-        <h3>学院官方抖音账号</h3>
-        <p>从 0 搭建并运营学院官方抖音账号，积累 1 万+ 粉丝，负责内容选题、
-           拍摄剪辑与日常更新，多篇内容进入校园传播热点。</p>
+        <h3>新媒体工作室 · 抖音账号运营</h3>
+        <p>参与指导老师创立的新媒体工作室，负责抖音账号的选题策划、拍摄剪辑与日常更新，账号累计粉丝 <strong>3.9 万+</strong>，多条内容进入同城与校园传播热点。</p>
+        <a class="douyin-link" href="https://v.douyin.com/I96-S0Lu_zo/" target="_blank" rel="noopener">查看抖音账号 →</a>
+        <p class="evidence-caption">该账号为老师创立的新媒体工作室账号，本人参与运营；手机端点击/长按复制链接，打开抖音搜索即可查看 TA 的更多作品。</p>
       </div>
 
       <div class="card">
-        <span class="badge">结项优秀</span>
+        <span class="badge">结项优秀 · 省级</span>
         <h3>河南省高校防艾基金项目</h3>
-        <p>参与省级高校防艾基金项目，负责宣传内容策划与传播，项目结项获评优秀，
-           内容覆盖 1000+ 名在校师生。</p>
+        <p>作为项目负责人，统筹 2025–2026 年度高校艾滋病防治基金项目（编号 HNGXFA2025027）的申报书撰写与活动执行，负责宣传内容策划与传播、选题、文案与新媒体推送。项目经河南省疾病预防控制中心考核为"优秀"（2026.08.26），宣传内容覆盖 1000+ 名在校师生。</p>
+        <ul>
+          <li>项目：2025–2026 年度高校艾滋病防治基金项目（编号 HNGXFA2025027）</li>
+          <li>角色：项目负责人（传播学院团总支），统筹申报书撰写与活动执行，负责宣传内容策划与传播</li>
+          <li>结项：河南省疾病预防控制中心考核结果 优秀（2026.08.26）</li>
+          <li>传播：覆盖 1000+ 名在校师生</li>
+        </ul>
+        <a href="assets/certs/fangai_jijin_jiexiang_youxiu_2026.jpg" target="_blank" rel="noopener">
+          <img src="assets/certs/fangai_jijin_jiexiang_youxiu_2026.jpg" alt="河南省高校防艾基金项目结项证书（考核优秀）" class="project-evidence" data-cap="结项证书 · 河南省疾病预防控制中心 2026.08.26 · 考核优秀">
+        </a>
+        <p class="evidence-caption">结项证书 · 河南省疾病预防控制中心 2026.08.26</p>
       </div>
 
     </div>
   </section>
 
-  <section id="exp">
+  <section id="works" class="reveal">
+    <h2><span class="bar"></span>已发表作品</h2>
+    <p class="sub">主流媒体署名评论与"了不起的三苏文化"系列短视频（点击可查看原作品）。</p>
+    <div class="works">
+
+      <div class="work">
+        <span class="src">河南日报 · 豫论场</span>
+        <h3>不能以金额大小定善意</h3>
+        <div class="meta">河南日报客户端 · 2026-07-28 · 署名评论</div>
+        <a class="go" href="https://m.topnews.cn/hnrbnews/145ED4E646BB4473" target="_blank" rel="noopener">阅读原文 →</a>
+      </div>
+
+      <div class="work">
+        <span class="src">河南日报 · 豫论场</span>
+        <h3>别让偏见跑在真相前面</h3>
+        <div class="meta">河南日报客户端 · 2026-07-24 · 署名评论</div>
+        <a class="go" href="https://m.topnews.cn/hnrbnews/145ED7E244B04A73" target="_blank" rel="noopener">阅读原文 →</a>
+      </div>
+
+      <div class="work">
+        <span class="src">顶端新闻 · 视频号</span>
+        <h3>#了不起的三苏文化 · 苏辙在中原</h3>
+        <div class="meta">顶端新闻视频号 · 2026-08-11 · #人文郏县 #此心安处是郏乡</div>
+        <a class="go" href="https://weixin.qq.com/sph/AKjUojx23j" target="_blank" rel="noopener">观看视频 →</a>
+      </div>
+
+      <div class="work">
+        <span class="src">顶端新闻 · 视频号</span>
+        <h3>#了不起的三苏文化 · 苏洵与中原</h3>
+        <div class="meta">顶端新闻视频号 · 2026-07-24</div>
+        <a class="go" href="https://weixin.qq.com/sph/AEWxGDJ7vi" target="_blank" rel="noopener">观看视频 →</a>
+      </div>
+
+      <div class="work">
+        <span class="src">顶端新闻 · 视频号</span>
+        <h3>#了不起的三苏文化 · 三苏与中原</h3>
+        <div class="meta">顶端新闻视频号 · 2026-07-17</div>
+        <a class="go" href="https://weixin.qq.com/sph/AaZbfSS6cH" target="_blank" rel="noopener">观看视频 →</a>
+      </div>
+
+    </div>
+
+    <p class="sub" style="margin-top:28px">见报版面（报纸截图，点击可放大）</p>
+    <div class="gallery paper-strip">
+      <figure data-full="assets/certs/hnr_article1.jpg" data-cap="河南日报 见报版面截图（请补充对应标题）"><img src="assets/certs/hnr_article1.jpg" alt="河南日报发表文章截图1" loading="lazy"><figcaption>河南日报 见报版面（截图 1）</figcaption></figure>
+      <figure data-full="assets/certs/hnr_article2.jpg" data-cap="河南日报 见报版面截图（请补充对应标题）"><img src="assets/certs/hnr_article2.jpg" alt="河南日报发表文章截图2" loading="lazy"><figcaption>河南日报 见报版面（截图 2）</figcaption></figure>
+      <figure data-full="assets/certs/hnr_article3.jpg" data-cap="河南日报 见报版面截图（请补充对应标题）"><img src="assets/certs/hnr_article3.jpg" alt="河南日报发表文章截图3" loading="lazy"><figcaption>河南日报 见报版面（截图 3）</figcaption></figure>
+      <figure data-full="assets/certs/hnr_article4.jpg" data-cap="河南日报 见报版面截图（请补充对应标题）"><img src="assets/certs/hnr_article4.jpg" alt="河南日报发表文章截图4" loading="lazy"><figcaption>河南日报 见报版面（截图 4）</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="exp" class="reveal">
     <h2><span class="bar"></span>实习经历</h2>
     <p class="sub">主流媒体与传播研究机构的内容生产实战。</p>
     <div class="exp">
       <div class="item"><span class="dot"></span><div>
         <h3>河南日报社 · 评论实习</h3>
-        <div class="meta">2025.12 至今</div>
-        <p>参与评论稿件采编，累计完成 3 篇署名评论，锻炼时政与深度内容写作能力。</p>
+        <div class="meta">2025.12–2026.09</div>
+        <p>参与评论稿件采编，已在河南日报客户端"豫论场"等栏目发表署名评论 2 篇；实习期间参与"了不起的三苏文化"系列短视频创作（发布于顶端新闻视频号），锻炼时政、深度与文旅内容写作能力。</p>
       </div></div>
       <div class="item"><span class="dot"></span><div>
-        <h3>顶端新闻 · 采写编辑 / 短视频</h3>
-        <div class="meta">2025.06 至今</div>
-        <p>参与顶端新闻文旅报道（如宋都御街专题），完成 30+ 篇稿件、100+ 条视频剪辑，
-           相关作品全网播放超百万。</p>
+        <h3>顶端新闻 · 采写编辑 / 账号运营</h3>
+        <div class="meta">2025.09–2026.06</div>
+        <p>负责顶端新闻开封站各平台账号运营，参与"宋都御街"相关报道的采写与短视频策划剪辑，相关作品全网播放超百万。</p>
       </div></div>
       <div class="item"><span class="dot"></span><div>
         <h3>国际 ESG 传播研究院 · 内容研究</h3>
@@ -251,45 +416,33 @@
     </div>
   </section>
 
-  <section id="awards">
+  <section id="awards" class="reveal">
     <h2><span class="bar"></span>荣誉奖项</h2>
-    <p class="sub">校级与省级认可的学业、工作与创作成果。</p>
+    <p class="sub">精选 8 项最具代表性的学业、创作与实习成果（省级及以上 + 主流媒体署名评论优先）。</p>
     <div class="awards">
-      <div class="award"><span class="lvl">市级</span><b>中共开封市委政法委员会 表扬信</b><p>2024.05.31 全省政法系统同训互查对抗演练活动（中央政法委河南调研期间），为市委政法委提供舆情引导评论、视频和图片参考，2024.06.20 致信表扬。</p></div>
-      <div class="award"><span class="lvl">国家级</span><b>国家励志奖学金</b><p>2023–2024 学年（编号 2024171744，河南省教育厅，2024.11），学业与综合表现突出。</p></div>
-      <div class="award"><span class="lvl">省级</span><b>河南省医学科普学会 第四届 5·12 护理科普短视频征集活动 优秀奖</b><p>作品《穿越千年学养生》（主创：王浩宇、殷圆；报送：河南开封科技传媒学院；颁发：河南省医学科普学会，2026.06.11）。</p></div>
-      <div class="award"><span class="lvl">省级</span><b>河南省 AI+影视作品推优活动 三等奖</b><p>作品《文物说开封》（河南省文联 / 省广电局 / 省科协，2025.12）。</p></div>
-      <div class="award"><span class="lvl">校级</span><b>第十六届 "挑战杯" 校决赛 三等奖</b><p>《沿黄护生·黄河生态农业协同发展路径探索》项目（共青团河南开封科技传媒学院委员会，2024.06）。</p></div>
-      <div class="award"><span class="lvl">校级</span><b>三好学生（2023–2024 / 2024–2025 两学年连续）</b><p>连续两学年获评，专业成绩与综合表现突出。</p></div>
-      <div class="award"><span class="lvl">校级</span><b>优秀学生干部（2023–2024 / 2024–2025 两学年连续）</b><p>连续两学年获评，综合成绩班级第 1；任期覆盖班长、团总支组织部、副书记。</p></div>
-      <div class="award"><span class="lvl">校级</span><b>优秀共青团员（2023 年度）</b><p>共青团河南开封科技传媒学院委员会 2024.05 颁发。</p></div>
-      <div class="award"><span class="lvl">校级</span><b>优秀网络评论员 / 优秀招生助理</b><p>2024–2025 学年舆论宣传工作优秀网评员（校党委宣传部，2025.08）；2024 年招生咨询优秀招生助理（校招生办，2024.09）。</p></div>
+      <div class="award"><span class="lvl">省级</span><b>2026 年河南省普通高等学校"优秀学生干部"</b><p>共青团河南省委 / 河南省教育厅认定，2026.07。</p></div>
+      <div class="award"><span class="lvl">国家级</span><b>国家励志奖学金</b><p>2023–2024 学年（河南省教育厅，2024.11），学业与综合表现突出。</p></div>
+      <div class="award"><span class="lvl">署名评论</span><b>河南日报·豫论场 署名评论 2 篇</b><p>《不能以金额大小定善意》《别让偏见跑在真相前面》（河南日报客户端，2026.07）。</p></div>
+      <div class="award"><span class="lvl">省级</span><b>河南省 AI+影视作品推优 三等奖《文物说开封》</b><p>河南省文联 / 省广电局 / 省科协，2025.12。</p></div>
+      <div class="award"><span class="lvl">省级</span><b>河南省 5·12 护理科普短视频 优秀奖《穿越千年学养生》</b><p>河南省医学科普学会，2026.06.11。</p></div>
+      <div class="award"><span class="lvl">市级</span><b>中共开封市委政法委员会 表扬信</b><p>全省政法系统同训互查对抗演练活动舆情支持，2024.06.20。</p></div>
+      <div class="award g2"><span class="lvl">学院奖</span><b>中国大学生广告艺术节学院奖 多项荣誉</b><p>健力宝抖音人气传播赛第十八名 + 优秀类、榄菊直播赛优秀类及 3 件入围（2026 春季赛）。</p></div>
+      <div class="award"><span class="lvl">连续</span><b>三好学生 + 优秀学生干部（两学年连获）</b><p>专业与综合表现突出，班级综合第 1；任期覆盖班长、团总支副书记。</p></div>
     </div>
   </section>
 
-  <section id="certs">
+  <section id="certs" class="reveal">
     <h2><span class="bar"></span>证书画廊</h2>
-    <p class="sub">部分获奖与资质证书（公开展示，如需下架可随时告知）。</p>
-    <div class="gallery">
-      <figure><img src="assets/certs/kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg" alt="中共开封市委政法委员会表扬信"><figcaption>市级 · 中共开封市委政法委员会致信表扬（2024.06.20，全省政法系统同训互查对抗演练）</figcaption></figure>
-      <figure><img src="assets/certs/guojia_lizhi_jiangxuejin_2023-2024.jpg" alt="国家励志奖学金证书"><figcaption>国家级 · 国家励志奖学金（2023–2024 学年，河南省教育厅）</figcaption></figure>
-      <figure><img src="assets/certs/henan_ai_ying_shi_wenwushuokaifeng_2025.jpg" alt="河南省 AI+影视作品推优活动三等奖证书"><figcaption>省级 · AI+影视《文物说开封》三等奖（2025.12）</figcaption></figure>
-      <figure><img src="assets/certs/hulihu_5_12_youxiu_jiang_2026-06-11.jpg" alt="河南省医学科普学会第四届 5·12 护理科普短视频征集活动优秀奖证书"><figcaption>省级 · 5·12 护理科普短视频《穿越千年学养生》优秀奖（2026.06.11，河南省医学科普学会）</figcaption></figure>
-      <figure><img src="assets/certs/tiaozhanbei_xiaojuesai_2024_yanhuanghusheng.jpg" alt="第十六届挑战杯校决赛三等奖证书"><figcaption>校级 · 第十六届"挑战杯"校决赛三等奖（沿黄护生，2024.06）</figcaption></figure>
-      <figure><img src="assets/certs/sanhao_xuesheng_2023-2024.jpg" alt="三好学生证书 2023-2024 学年"><figcaption>校级 · 三好学生（2023–2024 学年）</figcaption></figure>
-      <figure><img src="assets/certs/sanhao_xuesheng_2024-2025.jpg" alt="三好学生证书 2024-2025 学年"><figcaption>校级 · 三好学生（2024–2025 学年）</figcaption></figure>
-      <figure><img src="assets/certs/youxiu_xuesheng_ganbu_2023-2024.jpg" alt="优秀学生干部证书 2023-2024 学年"><figcaption>校级 · 优秀学生干部（2023–2024 学年）</figcaption></figure>
-      <figure><img src="assets/certs/youxiu_xuesheng_ganbu_2024-2025.jpg" alt="优秀学生干部证书 2024-2025 学年"><figcaption>校级 · 优秀学生干部（2024–2025 学年）</figcaption></figure>
-      <figure><img src="assets/certs/youxiu_gongqingtuanyuan_2023.jpg" alt="优秀共青团员证书"><figcaption>校级 · 优秀共青团员（2023 年度）</figcaption></figure>
-      <figure><img src="assets/certs/youxiu_wangluo_pinglunyuan_2024-2025.jpg" alt="优秀网络评论员证书"><figcaption>校级 · 优秀网络评论员（2024–2025 学年，党委宣传部，2025.08）</figcaption></figure>
-      <figure><img src="assets/certs/youxiu_zhaosheng_zhuli_2024.jpg" alt="优秀招生助理证书"><figcaption>校级 · 优秀招生助理（2024 年招生咨询，校招生办）</figcaption></figure>
-    </div>
+    <p class="sub">部分获奖与资质证书（公开展示，如需下架可随时告知）。点击可放大查看。</p>
+    <div class="gallery" id="gallery"></div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2><span class="bar"></span>联系方式</h2>
     <div class="contact">
       <p>邮箱：<a href="mailto:2714067199@qq.com">2714067199@qq.com</a></p>
+      <p>电话：<a href="tel:16627857205">166-2785-7205</a></p>
+      <p>微信：<span id="wxCopy" class="wx" title="点击复制微信号">yydewxhaooooo</span> <span class="wx-hint">（点击复制）</span></p>
       <p class="note">完整简历与更多作品请见上方「作品集」网盘链接。</p>
     </div>
   </section>
@@ -299,6 +452,157 @@
 <footer>
   殷圆 · 新媒体/内容运营作品集 · 本页由 WorkBuddy 生成，托管于 GitHub Pages
 </footer>
+
+<button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImg" src="" alt="">
+  <div class="cap" id="lightboxCap"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s){ return document.querySelector(s); };
+  var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  /* ===== 证书画廊数据 =====
+     已有证书：沿用线上绝对地址（预览与线上均可显示）
+     新增证书：assets/certs/ 相对路径（随本次新增图片一起上传后生效） */
+  var A = 'https://yy248.github.io/yinyuan-portfolio/assets/certs/';
+  var gallery = [
+    {f:'assets/certs/shengji_youxiu_xuesheng_ganbu_2026.jpg', c:'省级 · 2026年河南省普通高等学校"优秀学生干部"（共青团河南省委 / 省教育厅，2026.07）'},
+    {f:A+'guojia_lizhi_jiangxuejin_2023-2024.jpg', c:'国家级 · 国家励志奖学金（2023–2024 学年，河南省教育厅）'},
+    {f:A+'kaifeng_shiwei_zhengfawei_biaoyangxin_2024-06-20.jpg', c:'市级 · 中共开封市委政法委员会致信表扬（2024.06.20）'},
+    {f:A+'henan_ai_ying_shi_wenwushuokaifeng_2025.jpg', c:'省级 · AI+影视《文物说开封》三等奖（2025.12）'},
+    {f:A+'hulihu_5_12_youxiu_jiang_2026-06-11.jpg', c:'省级 · 5·12 护理科普短视频《穿越千年学养生》优秀奖（2026.06.11）'},
+    {f:'assets/certs/xueyuanjiang_jianlibao_renqi18_2026.jpg', c:'学院奖 · 健力宝抖音人气传播赛 第十八名《劲儿上来了！》（2026.08）'},
+    {f:'assets/certs/xueyuanjiang_jianlibao_youxiu_2026.jpg', c:'学院奖 · 健力宝赛道 优秀类《劲儿上来了！》（2026.08）'},
+    {f:'assets/certs/xueyuanjiang_lanju_zhibo_youxiu_2026.jpg', c:'学院奖 · 榄菊大学生直播赛 优秀类（2026.08）'},
+    {f:'assets/certs/xueyuanjiang_cunyuanfaze_ruwei_2026.jpg', c:'学院奖 · 健力宝赛道 入围类《健力宝次元法则》（2026.08）'},
+    {f:'assets/certs/xueyuanjiang_chengfeireai_ruwei_2026.jpg', c:'学院奖 · 健力宝赛道 入围类《橙沸热爱》（2026.08）'},
+    {f:'assets/certs/xueyuanjiang_changyinyikou_ruwei_2026.jpg', c:'学院奖 · 健力宝赛道 入围类《畅饮一口，重启高能》（2026.08）'},
+    {f:A+'tiaozhanbei_xiaojuesai_2024_yanhuanghusheng.jpg', c:'校级 · 第十六届"挑战杯"校决赛三等奖（沿黄护生，2024.06）'},
+    {f:A+'sanhao_xuesheng_2024-2025.jpg', c:'校级 · 三好学生（2024–2025 学年）'},
+    {f:A+'youxiu_xuesheng_ganbu_2024-2025.jpg', c:'校级 · 优秀学生干部（2024–2025 学年）'}
+  ];
+  var gal = $('#gallery');
+  gallery.forEach(function(it){
+    var fig = document.createElement('figure');
+    fig.setAttribute('data-full', it.f);
+    fig.setAttribute('data-cap', it.c);
+    fig.innerHTML = '<img src="'+it.f+'" alt="'+it.c.replace(/"/g,'')+'" loading="lazy"><figcaption>'+it.c+'</figcaption>';
+    gal.appendChild(fig);
+  });
+
+  /* 移动端汉堡菜单 */
+  var burger = $('#burger'), navLinks = $('#navLinks');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  $$('#navLinks a').forEach(function(a){
+    a.addEventListener('click', function(){
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  /* 滚动高亮 */
+  var ids = ['about','projects','works','exp','awards','certs','contact'];
+  var sections = ids.map(function(id){ return document.getElementById(id); });
+  var navAnchors = {};
+  $$('#navLinks a').forEach(function(a){
+    var href = a.getAttribute('href');
+    if (href && href.charAt(0) === '#') navAnchors[href.slice(1)] = a;
+  });
+  function onScroll(){
+    var pos = window.scrollY + 130;
+    var current = null;
+    sections.forEach(function(sec){ if (sec && sec.offsetTop <= pos) current = sec.id; });
+    Object.keys(navAnchors).forEach(function(id){
+      navAnchors[id].classList.toggle('active', id === current);
+    });
+    $('#toTop').classList.toggle('show', window.scrollY > 400);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  $('#toTop').addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* 数字动效 */
+  var counted = false;
+  function animateMetrics(){
+    if (counted) return; counted = true;
+    $$('#metrics b[data-to]').forEach(function(el){
+      var to = parseFloat(el.getAttribute('data-to')),
+          suffix = el.getAttribute('data-suffix') || '',
+          dec = parseInt(el.getAttribute('data-decimals'), 10) || 0;
+      var start = null, dur = 1200;
+      function fmt(v){ return (dec > 0 ? v.toFixed(dec) : Math.floor(v)) + suffix; }
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min((ts - start)/dur, 1);
+        el.textContent = fmt(p * to);
+        if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(to);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* 滚动渐显 */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('show');
+        if (e.target.id === 'about') animateMetrics();
+      }
+    });
+  }, {threshold:0.10});
+  $$('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* 灯箱 */
+  var lb = $('#lightbox'), lbImg = $('#lightboxImg'), lbCap = $('#lightboxCap');
+  function openLightbox(src, cap){ lbImg.src = src; lbCap.textContent = cap || ''; lb.classList.add('open'); }
+  function closeLightbox(){ lb.classList.remove('open'); lbImg.src = ''; }
+  $$('.gallery figure').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLightbox(fig.getAttribute('data-full'), fig.getAttribute('data-cap')); });
+  });
+  $$('.project-evidence').forEach(function(img){
+    var wrap = img.closest('a');
+    if (wrap){ wrap.addEventListener('click', function(ev){ ev.preventDefault(); openLightbox(img.src, img.getAttribute('data-cap') || img.alt); }); }
+  });
+  lb.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
+
+  /* 微信点击复制 + toast */
+  var toastEl = document.getElementById('toast');
+  function showToast(msg){
+    if (!toastEl) return;
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(window.__toastT);
+    window.__toastT = setTimeout(function(){ toastEl.classList.remove('show'); }, 1900);
+  }
+  function fallbackCopy(txt, cb){
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta); cb();
+    } catch (err) { showToast('请手动复制：' + txt); }
+  }
+  var wxEl = document.getElementById('wxCopy');
+  if (wxEl) wxEl.addEventListener('click', function(){
+    var txt = 'yydewxhaooooo';
+    var done = function(){ showToast('微信号已复制：' + txt); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done).catch(function(){ fallbackCopy(txt, done); });
+    } else { fallbackCopy(txt, done); }
+  });
+})();
+</script>
 
 </body>
 </html>
